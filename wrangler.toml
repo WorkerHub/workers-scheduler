@@ -1,0 +1,10 @@
+name = "workers-scheduler-dispatcher"
+main = "src/dispatcher/index.ts"
+compatibility_date = "2024-01-01"
+
+[triggers]
+crons = ["* * * * *"]
+
+[[kv_namespaces]]
+binding = "CRON_REGISTRY"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"

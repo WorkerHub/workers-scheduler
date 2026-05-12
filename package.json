@@ -1,0 +1,35 @@
+{
+  "name": "workers-scheduler",
+  "version": "0.1.0",
+  "description": "Central cron dispatcher for Cloudflare Workers",
+  "exports": {
+    "./client": {
+      "import": "./dist/client/index.js",
+      "types": "./dist/client/index.d.ts"
+    }
+  },
+  "bin": {
+    "workers-scheduler": "./dist/cli/register.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260511.1",
+    "@types/node": "^25.7.0",
+    "typescript": "^6.0.3",
+    "vitest": "^1.6.0",
+    "wrangler": "^4.90.0"
+  },
+  "dependencies": {
+    "croner": "^10.0.1"
+  },
+  "packageManager": "pnpm@10.33.0"
+}
